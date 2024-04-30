@@ -3,7 +3,7 @@
 @section('content')
 <div class="slider">
     <div class="slide-carousel owl-carousel">
-
+<h1>hello code world</h1>
         @if(count([$slideImages]) > 0)
         @foreach($slideImages as $slideImage )
         <div class="slider-item" style="background-image:url('{{ asset("storage/uploads/slide_images/".$slideImage->slide_image)}}');">
