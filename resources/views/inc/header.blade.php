@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-4">
                     <div class="top-header-right">
-                        <!-- <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i>{{ __('Register') }}</a>-->
+                        <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i>{{ __('Register') }}</a>
                         <a href="{{ route('login') }}"><i class="fas fa-lock"></i>{{ __('Login') }}</a>
                     </div>
                 </div>
@@ -43,8 +43,6 @@
                             <li><a href="{{Route('/')}}">Home</a></li>
 
                             <li><a href="{{Route('pages.services')}}">Services</a></li>
-
-                            <li><a href="{{Route('pages.destination')}}">Destinations</a></li>
 
                             <li><a href="{{Route('pages.package')}}">Packages</a></li>
 
