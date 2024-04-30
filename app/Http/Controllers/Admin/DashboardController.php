@@ -223,80 +223,10 @@ class DashboardController extends Controller
             }
     }
 
-    //Fuction to Update Destionation infos
-    public function updatedestinationinfo(Request $request){
-
-        $destinationInfos = DestinationInfo::findOrFail($request->destinationid);
-        $destinationInfos->destination_name = $request->input('destination_namee');
-        $destinationInfos->tittle = $request->input('tittlee');
-        $destinationInfos->description = $request->input('descriptionn');
-        $destinationInfos->status = $request->input('destination_statuss');
-            
-        if ($request->hasFile('destination_imagee')) {
-            $destination_path = 'storage/uploads/destination_images/'.$destinationInfos->destination_image;
-            if (File::exists($destination_path)) {
-                File::delete($destination_path);
-            }
-            //$request =request(); 
-            $file = $request->file('destination_imagee');
-            //Get filename with extension
-            $filenameWithExt = $request->file('destination_imagee')->getClientOriginalName();
-            //Get file name
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            //File Extension
-            $extension = $file->getClientOriginalExtension();
-            
-            $fileNamestoStore = $filename. '_'. time() . '.' . $extension;
-            $file->move('storage/uploads/destination_images', $fileNamestoStore);
-
-        }else{
-            $fileNamestoStore = 'noImage.jpg';
-        }
-
-        if ($request->hasFile('destination_imagee')) {
-
-            $destinationInfos->destination_image = $fileNamestoStore;
-        }
-         
-        $destinationInfos->update();
-
-        if ($destinationInfos) {
-            return response()->json([
-                'message' => 'successifully destination Updated',
-                'code' => 200
-            ]);
-        }else{
-            return response()->json([
-                'message' => 'Interna Server Error',
-                'code' => 500
-            ]);
-        }
-    }
-
-    //Function to Update Destination status only
-    public function updatedestinationstatus(Request $request){
-        $destinationInfos = DestinationInfo::findOrFail($request->destination_id);
-        $destinationInfos->status = $request->status;
-        $destinationInfos->save();
-        if ($destinationInfos) {
-                return response()->json([
-                    'message' => 'Status updated successfully.',
-                    'code' => 200
-
-                ]);
-            }else {
-                return response()->json([
-                    'message' => 'Inernal Server Error',
-                    'code' => 500
-                ]);
-            }
-    }
-
     //Function to Upadte Package info
     public function updatepackageinfo(Request $request){
 
         $packageInfos = PackageInfo::findOrFail($request->packageid);
-        $packageInfos->destination_info_id = $request->input('destionationn');
         $packageInfos->packagename = $request->input('package_namee');
         $packageInfos->packagetrip = $request->input('tripp');
         $packageInfos->packagecost = $request->input('package_costt');

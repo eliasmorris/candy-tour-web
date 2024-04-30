@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Mail\SendMail;
 use App\Models\BookingInfo;
-use App\Models\DestinationInfo;
 use App\Models\PackageInfo;
 use App\Models\SlideImage;
 use Illuminate\Http\Request;
@@ -15,8 +14,7 @@ class PagesController extends Controller
 
         $slideImages = SlideImage::all();
         $packages = PackageInfo::orderBy('id', 'desc')->paginate(3);
-        $destinations = DestinationInfo::all();
-        return view('index', compact(['slideImages', 'packages', 'destinations']));
+        return view('index', compact(['slideImages', 'packages']));
 
     }
     
@@ -28,12 +26,6 @@ class PagesController extends Controller
         
         return view('pages.services');
     }
-
-    public function destinationPage(){
-        $destinations = DestinationInfo::all();
-        return view('pages.destination',compact('destinations'));
-    }
-
     public function packagePage(){
 
         return view('pages.package');
@@ -62,13 +54,6 @@ class PagesController extends Controller
     public function contactPage(){
 
         return view('pages.contact');
-    }
-
-    public function destinationView($id){
-
-        $packageviews = DestinationInfo::find($id)->packageinfo;
-        $destinyviews = DestinationInfo::where('id', $id)->get();
-        return view('pages.destination.index',compact(['packageviews', 'destinyviews']));
     }
 
     public function packageView($id){
