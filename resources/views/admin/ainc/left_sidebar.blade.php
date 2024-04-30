@@ -33,8 +33,6 @@
               
               <li><a href="{{ url('admin-services') }}"><i class="fa fa-cubes"></i> Services <span class="fa fa-chevron-down"></span></a></li>
               
-              <li><a href="{{ url('admin-destination') }}"><i class="fa fa-globe"></i> Destination <span class="fa fa-chevron-down"></span></a>
-              
               <li><a href="{{ url('admin-package') }}"><i class="fa fa-archive"></i> Package<span class="fa fa-chevron-down"></span></a></li>
                 <ul class="nav child_menu">
                   <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
