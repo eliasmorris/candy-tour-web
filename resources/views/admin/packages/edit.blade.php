@@ -14,28 +14,6 @@
                         
                         <input type="hidden" name="packageid" id="packageid">
                         <div class="row mb-3">
-                            <label for="destionation" class="col-md-4 col-form-label text-md-end">{{ __('Destination') }}</label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="destionationn" id="destionationn">
-                                    <option value="" hidden>{{ __('Select Destionation')}}</option>
-                                    
-                                        @if(count([$destionationInfos]) > 0 )
-                                        @foreach($destionationInfos as $destionationInfo)
-                                        
-                                            <option value="{{$destionationInfo->id}}">{{$destionationInfo->destination_name}}</option>
-                                            
-                                        @endforeach 
-                                        @endif
-                                </select>
-                                @error('destination1')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                        
-                        <div class="row mb-3">
                             <label for="package_name" class="col-md-4 col-form-label text-md-end">{{ __('Package Name') }}</label>
 
                             <div class="col-md-6">
