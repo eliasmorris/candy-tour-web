@@ -28,7 +28,8 @@ class PagesController extends Controller
     }
     public function packagePage(){
 
-        return view('pages.package');
+        $packages = PackageInfo::where('status', 1)->get();
+        return view('pages.package', compact('packages'));
     }
 
     public function teammemberPage(){
