@@ -55,7 +55,7 @@
             </div>
             <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                 <div class="footer-item mt_30">
-                    <h3>Recent News</h3>
+                    <h3>Recent tours</h3>
                     <ul>
                         <li><a href="blog/debitis-consequuntur-sea-eu-ex-agam.html">Debitis consequuntur sea eu ex agam</a></li>
                         <li><a href="blog/eu-paulo-lucilius-adipisci-duo-eam.html">Eu paulo lucilius adipisci duo eam</a></li>
@@ -161,7 +161,7 @@
 </script>
 
 <div class="live-chat-container">
-    <!--Start of Tawk.to Scripts-->
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
