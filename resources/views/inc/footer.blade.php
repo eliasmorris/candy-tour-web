@@ -45,7 +45,7 @@
                 <div class="footer-item mt_30">
                     <h3>Latest Packages</h3>
                     <ul>
-                        <li><a href="package/8-days-in-bangkok.html">8 days in Bangkok</a></li>
+                        <li><a href="package/8-days-in-bangkok.html">5 days in Bangkok</a></li>
                         <li><a href="package/5-days-in-bangkok.html">5 days in Bangkok</a></li>
                         <li><a href="package/3-days-in-bangkok.html">3 days in Bangkok</a></li>
                         <li><a href="package/12-days-in-buenos-aires.html">12 days in Buenos Aires</a></li>
