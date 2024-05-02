@@ -62,7 +62,7 @@
                                 <div class="contact-text">
                                     <h3>Email Address</h3>
                                     <p>
-                                        <p>Office 1: +255 773 782 683<br>Office 2: 963-612-1782222</p>
+                                        <p>Office 1: +255 773 782 683<br>Office 2: +255 773 782 683</p>
                                     
                                 </div>
                             </div>
