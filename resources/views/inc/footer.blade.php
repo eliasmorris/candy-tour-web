@@ -71,7 +71,7 @@
                     <div class="footer-address-item">
                         <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="text"><span>
-                                <p><a href="">34, Edd Lane, NYC, 22335</a></p>
+                                <p><a href="https://maps.app.goo.gl/A46kXBzNEPVYBEty7">Kidichi Mnarani</a></p>
                             </span></div>
                     </div>
                     <div class="footer-address-item">
