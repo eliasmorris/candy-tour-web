@@ -84,7 +84,7 @@
                         <div class="icon"><i class="far fa-envelope"></i></div>
                         <div class="text"><span>
                                 <p>info@candytoursafari.co.tz</p>
-                                
+
                             </span></div>
                     </div>
 
@@ -160,11 +160,8 @@
     }
 </script>
 
-
-
-
-
 <div class="live-chat-container">
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
@@ -172,10 +169,11 @@
             var s1 = document.createElement("script"),
                 s0 = document.getElementsByTagName("script")[0];
             s1.async = true;
-            s1.src = 'https://embed.tawk.to/5a7c31ded7591465c7077c48/default';
+            s1.src = 'https://embed.tawk.to/663366efa0c6737bd133a01a/1hssck6ld';
             s1.charset = 'UTF-8';
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
+    <!--End of Tawk.to Script-->
 </div>
