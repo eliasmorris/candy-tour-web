@@ -84,7 +84,14 @@
                         <div class="icon"><i class="far fa-envelope"></i></div>
                         <div class="text"><span>
                                 <p>info@candytoursafari.co.tz</p>
-                                <i class="far fa-envelope"></i><p>sabinmorris8@gmail.com</p>
+                                
+                            </span></div>
+                    </div>
+
+                    <div class="footer-address-item">
+                        <div class="icon"><i class="far fa-envelope"></i></div>
+                        <div class="text"><span>
+                                <p>sabinmorris8@gmail.com</p>
                             </span></div>
                     </div>
 
