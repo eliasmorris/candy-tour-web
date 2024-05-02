@@ -71,19 +71,20 @@
                     <div class="footer-address-item">
                         <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="text"><span>
-                                <p>34, Edd Lane, NYC, 22335</p>
+                                <p><a href="">34, Edd Lane, NYC, 22335</a></p>
                             </span></div>
                     </div>
                     <div class="footer-address-item">
                         <div class="icon"><i class="fas fa-phone-volume"></i></div>
                         <div class="text"><span>
-                                <p>111-222-3333</p>
+                                <p>+255 773 782 683</p>
                             </span></div>
                     </div>
                     <div class="footer-address-item">
                         <div class="icon"><i class="far fa-envelope"></i></div>
                         <div class="text"><span>
-                                <p>contact@yourwebsite.com</p>
+                                <p>info@candytoursafari.co.tz</p>
+                                <p>sabinmorris8@gmail.com</p>
                             </span></div>
                     </div>
 

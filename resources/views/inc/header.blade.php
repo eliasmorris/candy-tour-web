@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-8">
                     <div class="top-header-left">
-                        <p><i class="fas fa-phone"></i>+255 717 035783</p>
+                        <p><i class="fas fa-phone"></i>+255 773 782 683</p>
                         <p><i class="far fa-envelope"></i>info@candytoursafari.co.tz</p>
                     </div>
                 </div>
