@@ -62,7 +62,7 @@
                                 <div class="contact-text">
                                     <h3>Email Address</h3>
                                     <p>
-                                        <p>Office 1: 954-648-1802<br>Office 2: 963-612-1782</p>
+                                        <p>Office 1: +255 773 782 683<br>Office 2: 963-612-1782</p>
                                     
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                                 <div class="contact-text">
                                     <h3>Phone</h3>
                                     <p>
-                                        <p>sales@yourwebsite.com<br>support@yourwebsite.com</p>
+                                        <p>sales@yourwebsite.com<br>info@candytoursafari.co.tz</p>
                                     
                                 </div>
                             </div>
