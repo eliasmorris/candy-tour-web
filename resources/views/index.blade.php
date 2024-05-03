@@ -59,7 +59,7 @@
             @foreach($serviceinfos as $serviceinfo)
             <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
                 <div class="service-item mt_30" style="background-image: url('{{ asset("storage/uploads/service_images/".$serviceinfo->service_image)}}')">
-                    <a href="service/international-tour.html">
+                    <a href="#">
                         <i class="fas fa-globe"></i>
                         <div class="ser-text">
                             <h4>{{ $serviceinfo->service_name}}</h4>
@@ -72,7 +72,7 @@
             </div>
             @endforeach
             @endif
-            
+
         </div>
     </div>
 </div>
@@ -100,7 +100,7 @@
                         <div class="featured-photo left">
 
                             <img src="{{ asset('storage/uploads/package_images/' .$package->packageimage)}}" alt="3 days in Buenos Aires">
-                            <!-- <span class="price"><i class="fas fa-dollar-sign"></i> {{ $package->packagecost }} / Person</span> -->
+
                         </div>
                         <div class="team-text">
                             <a href="{{Route('package.view', $package->id)}}">
@@ -113,18 +113,18 @@
                         <div class="featured-text">
                             <h4><a href="{{Route('package.view', $package->id)}}">{{ $package->packagename }}</a></h4>
                             <p>
-                                
-                            
-                            @if(strlen($package->description) > 50 )
-                            <p>{!! htmlspecialchars_decode(substr($package->description, 0,50)) !!}...</p>
-                            <a href="{{ url('readmore', $package->id)}}" >
-                                    <!--more&gt;&gt;-->
-                                    Read more...
-                                 </a>
+
+
+                                @if(strlen($package->description) > 50 )
+                            <p>{!! htmlspecialchars_decode(substr($package->description, 0,100)) !!}...</p>
+                            <a href="{{ url('readmore', $package->id)}}">
+                                <!--more&gt;&gt;-->
+                                Read more...
+                            </a>
                             @else
                             {!! htmlspecialchars_decode($package->description) !!}
                             @endif
-                            
+
                         </div>
                     </div>
                     @endforeach

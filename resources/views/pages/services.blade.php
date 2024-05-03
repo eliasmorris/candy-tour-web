@@ -22,13 +22,13 @@
             @if(count([$serviceinfos])> 0)
             @foreach($serviceinfos as $serviceinfo)
             <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url(public/uploads/service-1.jpg)">
-                    <a href="service/international-tour.html">
+                <div class="service-item mt_30" style="background-image: url('{{ asset("storage/uploads/service_images/".$serviceinfo->service_image)}}')">
+                    <a href="#">
                         <i class="fas fa-globe"></i>
                         <div class="ser-text">
-                            <h4>International Tour</h4>
+                            <h4>{{$serviceinfo->service_name}}</h4>
                             <p>
-                            <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.</p>
+                            <p>{!! htmlspecialchars_decode($serviceinfo->service_description) !!}</p>
 
                         </div>
                     </a>
