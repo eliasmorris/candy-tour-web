@@ -8,7 +8,7 @@
                         <h2>Newsletter</h2>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid fugit expedita, iure ullam cum vero ex sint aperiam maxime.
+                    It is very important for the customer to pay attention to the get news and offered provided by candy tour and safary.
                     </p>
                 </div>
             </div>
@@ -112,7 +112,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="copy-text">
-                    <p>Copyright 2021. phpscriptpoint. All Rights Reserved.</p>
+                    <p>Copyright 2021. candy tour and safary. All Rights Reserved.</p>
                 </div>
 
 
