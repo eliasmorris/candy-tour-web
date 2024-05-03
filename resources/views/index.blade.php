@@ -55,86 +55,24 @@
             </div>
         </div>
         <div class="row">
+            @if(count($serviceinfos) > 0 )
+            @foreach($serviceinfos as $serviceinfo)
             <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url(storage/uploads/service1.webp)">
+                <div class="service-item mt_30" style="background-image: url('{{ asset("storage/uploads/service_images/".$serviceinfo->service_image)}}')">
                     <a href="service/international-tour.html">
                         <i class="fas fa-globe"></i>
                         <div class="ser-text">
-                            <h4>Island Tour</h4>
+                            <h4>{{ $serviceinfo->service_name}}</h4>
                             <p>
-                            <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.</p>
+                            <p>{{ $serviceinfo->service_description}}</p>
 
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url(storage/uploads/service2.webp)">
-                    <a href="service/adventure-tour.html">
-                        <i class="fab fa-superpowers"></i>
-                        <div class="ser-text">
-                            <h4>Adventure Tour</h4>
-                            <p>
-                            <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.</p>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url(storage/uploads/service-3.jpg)">
-                    <a href="service/business-tour.html">
-                        <i class="far fa-handshake"></i>
-                        <div class="ser-text">
-                            <h4>Jozani Tour</h4>
-                            <p>
-                            <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.</p>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url(storage/uploads/service-4.jpg)">
-                    <a href="service/domestic-tour.html">
-                        <i class="fas fa-anchor"></i>
-                        <div class="ser-text">
-                            <h4>Safari blue Tour</h4>
-                            <p>
-                            <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.</p>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url(storage/uploads/service-5.jpg)">
-                    <a href="service/medical-tour.html">
-                        <i class="fas fa-briefcase-medical"></i>
-                        <div class="ser-text">
-                            <h4>Spice Tour</h4>
-                            <p>
-                            <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.</p>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url(storage/uploads/service-6.jpg)">
-                    <a href="service/religious-tour.html">
-                        <i class="fas fa-atom"></i>
-                        <div class="ser-text">
-                            <h4>Culture Tour</h4>
-                            <p>
-                            <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.</p>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-
+            @endforeach
+            @endif
+            
         </div>
     </div>
 </div>

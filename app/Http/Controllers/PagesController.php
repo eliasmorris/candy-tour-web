@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Mail\SendMail;
 use App\Models\BookingInfo;
 use App\Models\PackageInfo;
+use App\Models\ServiceModel;
 use App\Models\SlideImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -14,7 +15,8 @@ class PagesController extends Controller
 
         $slideImages = SlideImage::all();
         $packages = PackageInfo::orderBy('id', 'desc')->paginate(3);
-        return view('index', compact(['slideImages', 'packages']));
+        $serviceinfos = ServiceModel::where('id', 1)->get();
+        return view('index', compact(['slideImages', 'packages','serviceinfos']));
 
     }
     
@@ -24,7 +26,8 @@ class PagesController extends Controller
 
     public function servicePage(){
         
-        return view('pages.services');
+        $serviceinfos = ServiceModel::where('id', 1)->get();
+        return view('pages.services', compact('serviceinfos'));
     }
     public function packagePage(){
 
