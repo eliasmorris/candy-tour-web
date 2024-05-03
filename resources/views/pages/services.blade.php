@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
 
-<div class="banner-slider" style="background-image: url(storage/uploads/banner_service.jpg)">
+<div class="banner-slider" style="background-image: url('{{ asset("storage/uploads/service_images/destination-7_1714723699.jpg")}}')">
     <div class="bg"></div>
     <div class="bannder-table">
         <div class="banner-text">
@@ -27,6 +27,7 @@
                         <i class="fas fa-globe"></i>
                         <div class="ser-text">
                             <h4>{{$serviceinfo->service_name}}</h4>
+                            
                             <p>
                             <p>{!! htmlspecialchars_decode($serviceinfo->service_description) !!}</p>
 
@@ -34,6 +35,7 @@
                     </a>
                 </div>
             </div>
+            
             @endforeach
             @endif
 
