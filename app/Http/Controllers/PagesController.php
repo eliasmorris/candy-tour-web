@@ -15,6 +15,7 @@ class PagesController extends Controller
 
         $slideImages = SlideImage::all();
         $packages = PackageInfo::orderBy('id', 'desc')->paginate(3);
+        $packages = PackageInfo::where('id', 1)->get();
         $serviceinfos = ServiceModel::where('id', 1)->get();
         return view('index', compact(['slideImages', 'packages','serviceinfos']));
 
