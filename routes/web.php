@@ -35,6 +35,7 @@ Route::get('our-testimonial', [PagesController::class, 'testimonialPage'])->name
 Route::get('faq', [PagesController::class, 'faqPage'])->name('pages.faq');
 Route::get('contact-us', [PagesController::class, 'contactPage'])->name('pages.contact');
 Route::get('packages/{id}', [PagesController::class, 'packageView'])->name('package.view');
+Route::get('readmore/{id}', [PagesController::class, 'readmore'])->name('readmore-package');
 Route::post('booking-info',[PagesController::class, 'storebookinginfo'])->name('booking-info');
 Route::get('sendmail',[PagesController::class, 'sendmail']);
 
@@ -60,11 +61,6 @@ Route::post('about-status', [DashboardController::class, 'updateaboutstatus'])->
 Route::resource('admin-services', ServiceController::class);
 Route::post('admin-service-info',[DashboardController::class, 'updateserviceinfo'])->name('update-service-info');
 Route::post('service-status',[DashboardController::class, 'updateservicestatus'])->name('update-service-status');
-
-//Route for Destination Page Controller
-Route::resource('admin-destination', DestinationController::class);
-Route::post('admin-destination-info', [DashboardController::class, 'updatedestinationinfo'])->name('update-destination-info');
-Route::post('destination-status', [DashboardController::class, 'updatedestinationstatus'])->name('update-destination-status');
 
 //Route for Package Controller
 Route::resource('admin-package', PackageController::class);
