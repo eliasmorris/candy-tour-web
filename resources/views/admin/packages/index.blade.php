@@ -26,6 +26,7 @@
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".package-page-modal-lg">
                                     {{ __('Package')}} <i class="fa fa-plus"></i>
                                 </button>
+                                @include('admin.packages.create')
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
 
