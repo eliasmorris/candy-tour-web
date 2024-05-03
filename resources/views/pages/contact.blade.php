@@ -52,7 +52,7 @@
                                 <div class="contact-text">
                                     <h3>Address</h3>
                                     <p>
-                                        <p>3153 Foley Street<br>Miami, FL 33176</p>
+                                        <p>3153 Foley Street<br>Kidichi Mnarani</p>
                                     
                                 </div>
                             </div>
