@@ -23,7 +23,7 @@
                         <div class="headstyle">
                             <h4>Contact Form</h4>
                         </div>
-                        <form action="#" method="post">
+                        <form action="#" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="Dccr0BuK08xOGx5d6rAYgp05Bhiq8HnhPtgxLvxk">                            <div class="form-row">
                                 <div class="form-group mb-3">
                                     <input type="text" class="form-control" placeholder="Name" name="visitor_name">
