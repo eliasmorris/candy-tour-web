@@ -35,7 +35,7 @@ class PackageController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'destionation' => 'required',
+            
             'package_name' => 'required',
             'trip' => 'required',
             'package_cost' => 'required',
@@ -62,7 +62,6 @@ class PackageController extends Controller
         }
 
             $packageInfos = new PackageInfo;
-            $packageInfos->destination_info_id = $request->input('destionation');
             $packageInfos->packagename = $request->input('package_name');
             $packageInfos->packagetrip = $request->input('trip');
             $packageInfos->packagecost = $request->input('package_cost');
