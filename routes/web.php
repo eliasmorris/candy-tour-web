@@ -35,7 +35,7 @@ Route::get('our-testimonial', [PagesController::class, 'testimonialPage'])->name
 Route::get('faq', [PagesController::class, 'faqPage'])->name('pages.faq');
 Route::get('contact-us', [PagesController::class, 'contactPage'])->name('pages.contact');
 Route::get('packages/{id}', [PagesController::class, 'packageView'])->name('package.view');
-Route::get('readmore/{id}', [PagesController::class, 'readmore'])->name('readmore-package');
+Route::get('readmore/{id}', [PagesController::class, 'readmorepackage'])->name('readmore-package');
 Route::post('booking-info',[PagesController::class, 'storebookinginfo'])->name('booking-info');
 Route::get('sendmail',[PagesController::class, 'sendmail']);
 
