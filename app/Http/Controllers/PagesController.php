@@ -20,6 +20,18 @@ class PagesController extends Controller
         return view('index', compact(['slideImages', 'packages','serviceinfos']));
 
     }
+
+    public function readmore($id){
+        $packages = PackageInfo::find($id);
+        $slideImages = SlideImage::all();
+        
+        $packages = PackageInfo::where('id', 1)->get();
+        
+        
+        $serviceinfos = ServiceModel::where('id', 1)->get();
+        
+        return view('readmore', compact(['slideImages', 'packages','serviceinfos']));
+    }
     
     public function aboutPage(){
         return view('pages.about');
