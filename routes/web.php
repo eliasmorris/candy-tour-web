@@ -50,6 +50,8 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 
 //Route for Logo Controller
 Route::resource('admin-logo', LogoController::class);
+Route::post('logo', [DashboardController::class, 'updatelogo'])->name('update-logo-info');
+Route::post('logo-status', [DashboardController::class, 'updatelogostatus'])->name('update-logo-status');
 
 //Routes for Slides controller
 Route::resource('admin-slides', SlideController::class);

@@ -80,9 +80,9 @@
                                                                 class="fa fa-eye"></span></a>
                                                         &nbsp;&nbsp;
                                                         @can('isAdmin')
-                                                        <a href="" class="service_Edit" data-id="{{$logoInfo->id}}"
+                                                        <a href="" class="logo_Edit" data-id="{{$logoInfo->id}}"
                                                             data-toggle="modal"
-                                                            data-target=".service-modal-lg" title="edit"><span
+                                                            data-target=".update-logo-modal-lg" title="edit"><span
                                                                 class="fa fa-pencil-square"
                                                                 style="color:cornflowerblue;"></span></a>
                                                         @include('admin.logo.edit')
@@ -90,7 +90,7 @@
                                                         &nbsp;&nbsp;
 
                                                         <form id="delete-form-{{$logoInfo->id}}"
-                                                            action="{{route('admin-services.destroy',$logoInfo->id)}}"
+                                                            action="{{route('admin-logo.destroy',$logoInfo->id)}}"
                                                             method="POST" style="display: none">
                                                             {{ csrf_field() }}
                                                             {{method_field('DELETE')}}
@@ -150,7 +150,7 @@
         });
     });
 
-    // Ajax for update slide images status only
+    // Ajax for update logo status only
     $(document).ready(function() {
         $.ajaxSetup({
             headers: {
@@ -159,14 +159,14 @@
         });
         $('.switch').change(function() {
             let status = $(this).prop('checked') === true ? 1 : 0;
-            let service_Id = $(this).data('id');
+            let logo_Id = $(this).data('id');
             $.ajax({
                 type: "POST",
                 dataType: "json",
-                url: "{{ route('update-service-status') }}",
+                url: "{{ route('update-logo-status') }}",
                 data: {
                     'status': status,
-                    'service_id': service_Id
+                    'logo_id': logo_Id
                 },
                 success: function(data) {
                     toastr.options.closeButton = true;
@@ -183,21 +183,21 @@
 
     });
 
-    // Ajax for add services info data to the db
+    // Ajax for add logo info data to the db
     $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        $('#addservicesForm').on('submit', function(e) {
+        $('#addlogoForm').on('submit', function(e) {
             e.preventDefault();
 
             if (confirm('Are you sure want to save it??')) {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "{{ route('admin-services.store')}}", //For using Resource Controller
+                    url: "{{ route('admin-logo.store')}}", //For using Resource Controller
                     data: new FormData(this),
                     cache: false,
                     processData: false,
@@ -219,52 +219,51 @@
         });
     });
 
-    // Ajax for featching about page data from the db to the about page form
+    // Ajax for featching logo data from the db to the about page form
     $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        $('.service_Edit').click(function(e) {
+        $('.logo_Edit').click(function(e) {
             e.preventDefault();
-            let serviceId = $(this).data('id');
+            let logoId = $(this).data('id');
 
             $.ajax({
                 type: "get",
                 dataType: "json",
-                url: "{{ route('admin-services.index')}}"+ "/" + serviceId + "/edit", //For using Resource Controller url('userEdit_data')}}"+"/"+uId+"/edit"
+                url: "{{ route('admin-logo.index')}}"+ "/" + logoId + "/edit", //For using Resource Controller url('userEdit_data')}}"+"/"+uId+"/edit"
                 data: {
-                    'serviceid': serviceId
+                    'logoid': logoId
                 },
                 success: function(data) {
                     //console.log(data.user1.name);
-                    $('#serviceid').val(data.service_infos.id);
-                    $('#service_namee').val(data.service_infos.service_name);
-                    $('#service_descriptionn').val(data.service_infos.service_description);
-                    $('#service_statuss').val(data.service_infos.status);
-                    $('#service_imagee').val(data.service_infos.service_image);
+                    $('#logoid').val(data.logo_Infos.id);
+                    $('#logo_namee').val(data.logo_Infos.logo_name);
+                    $('#logo_statuss').val(data.logo_Infos.status);
+                    $('#logo_imagee').val(data.logo_Infos.logo_image);
 
                 }
             });
         });
     });
 
-    // Ajax for Update service page info to the db
+    // Ajax for Update logo page info to the db
 $(document).ready(function() {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    $('#updateservicesForm').on('submit',function(e) {
+    $('#updatelogoForm').on('submit',function(e) {
         e.preventDefault();
         
         if (confirm('Are you sure want to update??')) {
             $.ajax({
             type: "POST",
             dataType: "json",
-            url: "{{ route('update-service-info')}}",
+            url: "{{ route('update-logo-info')}}",
             data: new FormData(this),
             cache: false,
             processData: false,
@@ -275,7 +274,7 @@ $(document).ready(function() {
                 toastr.options.closeMethod = 'fadeOut';
                 toastr.options.closeDuration = 100;
                 toastr.success(response.message);
-                $('#servicemodal').modal('hide');
+                $('#logomodal').modal('hide');
                 //refresh the page
                 setTimeout(() => {
                     document.location.reload();

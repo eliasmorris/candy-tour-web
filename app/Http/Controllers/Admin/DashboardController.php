@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\SlideImage;
 use App\Models\AboutInfo;
-use App\Models\DestinationInfo;
+use App\Models\LogoInfo;
 use App\Models\PackageInfo;
 use App\Models\ServiceModel;
 use Illuminate\Http\Request;
@@ -13,6 +13,75 @@ use Illuminate\Support\Facades\File;
 
 class DashboardController extends Controller
 {
+
+    //function to update logo info
+    public function updatelogo(Request $request){
+
+        $logoInfos = LogoInfo::findOrFail($request->logoid);
+        $logoInfos->logo_name = $request->input('logo_namee');
+        $logoInfos->status = $request->input('logo_statuss');
+            
+        if ($request->hasFile('logo_imagee')) {
+            $destination_path = 'storage/uploads/service_images/'.$logoInfos->logo_image;
+            if (File::exists($destination_path)) {
+                File::delete($destination_path);
+            }
+            //$request =request(); 
+            $file = $request->file('logo_imagee');
+            //Get filename with extension
+            $filenameWithExt = $request->file('logo_imagee')->getClientOriginalName();
+            //Get file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //File Extension
+            $extension = $file->getClientOriginalExtension();
+            
+            $fileNamestoStore = $filename. '_'. time() . '.' . $extension;
+            $file->move('storage/uploads/logo_images', $fileNamestoStore);
+
+        }else{
+            $fileNamestoStore = 'noIm
+            age.jpg';
+        }
+
+        if ($request->hasFile('logo_imagee')) {
+
+            $logoInfos->logo_image = $fileNamestoStore;
+        }
+         
+        $logoInfos->update();
+
+        if ($logoInfos) {
+            return response()->json([
+                'message' => 'successifully logo Updated',
+                'code' => 200
+            ]);
+        }else{
+            return response()->json([
+                'message' => 'Interna Server Error',
+                'code' => 500
+            ]);
+        }
+    }
+
+    //function to upade logo status only
+    public function updatelogostatus(Request $request){
+        $logoInfos = LogoInfo::findOrFail($request->logo_id);
+        $logoInfos->status = $request->status;
+        $logoInfos->save();
+        if ($logoInfos) {
+                return response()->json([
+                    'message' => 'Status updated successfully.',
+                    'code' => 200
+
+                ]);
+            }else {
+                return response()->json([
+                    'message' => 'Inernal Server Error',
+                    'code' => 500
+                ]);
+            }
+    }
+
     //function to update image slide status only
     public function updateslidestatus(Request $request){
         $slide_img = SlideImage::findOrFail($request->slideImg_Id);
