@@ -15,7 +15,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 mt_30 wow fadeIn" data-wow-delay="0.2s">
-                <form action="https://scriptsnest.com/travelplace/subscription" method="post">
+                <form action="#" method="post">
                     <input type="hidden" name="_token" value="Dccr0BuK08xOGx5d6rAYgp05Bhiq8HnhPtgxLvxk">
                     <div class="newsletter-submit">
                         <input type="text" placeholder="Email Address" name="subs_email">
