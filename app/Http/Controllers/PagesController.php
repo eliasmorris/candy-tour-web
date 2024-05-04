@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Mail\SendMail;
 use App\Models\BookingInfo;
+use App\Models\LogoInfo;
 use App\Models\PackageInfo;
 use App\Models\ServiceModel;
 use App\Models\SlideImage;
@@ -13,11 +14,11 @@ class PagesController extends Controller
 {
     public function homePage(){
 
-        $slideImages = SlideImage::all();
+        $logoInfos = LogoInfo::where('status', 1)->get();
+        $slideImages = SlideImage::where('status', 1)->get();
         $packages = PackageInfo::where('status', 1)->get();
-        // $packages = PackageInfo::orderBy('id', 'desc')->paginate(3);
         $serviceinfos = ServiceModel::where('status', 1)->get();
-        return view('index', compact(['slideImages', 'packages','serviceinfos']));
+        return view('index', compact(['logoInfos','slideImages', 'packages','serviceinfos']));
 
     }
 

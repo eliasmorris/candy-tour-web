@@ -31,9 +31,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-12">
+                @if(count([$logoInfos]) > 0)
+                @foreach($logoInfos as $logoInfo)
                 <div class="logo">
-                    <a href="{{Route('/')}}"><img src="{{ asset('storage/uploads/logo.jpg')}}" alt="Logo"></a>
+                    <a href="{{Route('/')}}"><img src="{{ asset('storage/uploads/logo_images' .$logoInfo->logo_image)}}" alt="Logo"></a>
                 </div>
+                @endforeach
+                @endif
             </div>
             <div class="col-md-9 col-sm-12">
                 <div class="nav-wrapper main-menu">
