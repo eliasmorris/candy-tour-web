@@ -27,6 +27,8 @@
             <ul class="nav side-menu">
               <li><a href="{{Route('admin-dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard <span class="fa fa-chevron-right"></span></a></li>
               
+              <li><a href="{{ url('admin-logo') }}"><i class="fa fa-clone"></i>Logo<span class="fa fa-chevron-right"></span></a></li>
+              
               <li><a href="{{ url('admin-slides') }}"><i class="fa fa-clone"></i>Slide<span class="fa fa-chevron-right"></span></a></li>
               
               <li><a href="{{ url('admin-about') }}"><i class="fa fa-desktop"></i> About Us <span class="fa fa-chevron-down"></span></a></li>

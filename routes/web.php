@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DestinationController;
+use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SlideController;
@@ -46,6 +47,9 @@ Route::get('sendmail',[PagesController::class, 'sendmail']);
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin-dashboard');
+
+//Route for Logo Controller
+Route::resource('admin-logo', LogoController::class);
 
 //Routes for Slides controller
 Route::resource('admin-slides', SlideController::class);

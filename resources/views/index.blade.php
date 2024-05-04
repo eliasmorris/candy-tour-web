@@ -5,7 +5,7 @@
 
         @if(count([$slideImages]) > 0)
         @foreach($slideImages as $slideImage )
-        <div class="slider-item" style="background-image:url('{{ asset("storage/uploads/slide_images/".$slideImage->slide_image)}}');">
+        <div class="slider-item" style="background-image:url('{{ asset("storage/uploads/slide_images/" .$slideImage->slide_image)}}');">
             <div class="slider-bg"></div>
             <div class="container">
                 <div class="row">
@@ -57,7 +57,7 @@
             @if(count($serviceinfos) > 0 )
             @foreach($serviceinfos as $serviceinfo)
             <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url('{{ asset("storage/uploads/service_images/".$serviceinfo->service_image)}}');">
+                <div class="service-item mt_30" style="background-image: url('{{ asset("storage/uploads/service_images/" .$serviceinfo->service_image)}}');">
                     <a href="#">
                         <i class="fas fa-globe"></i>
                         <div class="ser-text">
@@ -272,7 +272,7 @@
 </div>
 
 
-<div class="testimonial-area pt_80 pb_80" style="background-image: url(storage/uploads/testimonial_bg.jpg);">
+<div class="testimonial-area pt_80 pb_80" style="background-image: url(storage/uploads/testimonial_bg.jpg);" >
     <div class="bg-testimonial"></div>
     <div class="container wow fadeIn">
         <div class="row">
