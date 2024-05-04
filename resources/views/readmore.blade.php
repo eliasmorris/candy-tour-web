@@ -223,7 +223,7 @@
 </div>
 
 
-<div class="testimonial-area pt_80 pb_80" style="background-image: url(storage/uploads/testimonial_bg.jpg)">
+<div class="testimonial-area pt_80 pb_80" style="background-image: url(storage/uploads/testimonial_bg.jpg);">
     <div class="bg-testimonial"></div>
     <div class="container wow fadeIn">
         <div class="row">

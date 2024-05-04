@@ -22,7 +22,7 @@
             @if(count([$serviceinfos])> 0)
             @foreach($serviceinfos as $serviceinfo)
             <div class="col-md-4 col-xs-6 clear-three wow fadeIn" data-wow-delay="0.1s">
-                <div class="service-item mt_30" style="background-image: url('{{ asset("storage/uploads/service_images/".$serviceinfo->service_image)}}')">
+                <div class="service-item mt_30" style="background-image: url('{{ asset("storage/uploads/service_images/".$serviceinfo->service_image)}}');">
                     <a href="#">
                         <i class="fas fa-globe"></i>
                         <div class="ser-text">
