@@ -23,57 +23,59 @@ class PagesController extends Controller
     }
 
     public function readmorepackage($id){
+        $logoInfos = LogoInfo::where('status', 1)->get();
         $package = PackageInfo::find($id);
         $slideImages = SlideImage::all();
         $serviceinfos = ServiceModel::where('status', 1)->get();
-        return view('readmore', compact(['slideImages', 'package','serviceinfos']));
+        return view('readmore', compact(['logoInfos','slideImages', 'package','serviceinfos']));
     }
     
     public function aboutPage(){
-        return view('pages.about');
+        $logoInfos = LogoInfo::where('status', 1)->get();
+        return view('pages.about', compact('logoInfos'));
     }
 
     public function servicePage(){
-        
+        $logoInfos = LogoInfo::where('status', 1)->get();
         $serviceinfos = ServiceModel::where('status', 1)->get();
-        return view('pages.services', compact('serviceinfos'));
+        return view('pages.services', compact('logoInfos','serviceinfos'));
     }
     public function packagePage(){
-
+        $logoInfos = LogoInfo::where('status', 1)->get();
         $packages = PackageInfo::where('status', 1)->get();
-        return view('pages.package', compact('packages'));
+        return view('pages.package', compact('logoInfos','packages'));
     }
 
     public function teammemberPage(){
-
-        return view('pages.team_member');
+        $logoInfos = LogoInfo::where('status', 1)->get();
+        return view('pages.team_member', compact('logoInfos'));
     }
 
     public function testimonialPage(){
-
-        return view('pages.testimonial');
+        $logoInfos = LogoInfo::where('status', 1)->get();
+        return view('pages.testimonial', compact('logoInfos'));
     }
 
     public function faqPage(){
-
-        return view('pages.faq');
+        $logoInfos = LogoInfo::where('status', 1)->get();
+        return view('pages.faq',compact('logoInfos'));
     }
 
     public function blogPage(){
-
-        return view('pages.blog');
+        $logoInfos = LogoInfo::where('status', 1)->get();
+        return view('pages.blog', compact('logoInfos'));
     }
 
     public function contactPage(){
-
-        return view('pages.contact');
+        $logoInfos = LogoInfo::where('status', 1)->get();
+        return view('pages.contact', compact('logoInfos'));
     }
 
     public function packageView($id){
-        
+        $logoInfos = LogoInfo::where('status', 1)->get();
         $packageviewpictures = PackageInfo::orderBy('id', 'desc')->paginate(3);
         $packagescost = PackageInfo::where('id', $id)->get();
-        return view('pages.packages.index', compact(['packagescost', 'packageviewpictures']));
+        return view('pages.packages.index', compact(['logoInfos','packagescost', 'packageviewpictures']));
     }
 
     public function storebookinginfo(Request $request){
