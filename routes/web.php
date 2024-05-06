@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\LogoController;
+use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SlideController;
@@ -72,3 +73,6 @@ Route::post('service-status',[DashboardController::class, 'updateservicestatus']
 Route::resource('admin-package', PackageController::class);
 Route::post('admin-package-info',[DashboardController::class, 'updatepackageinfo'])->name('update-package-info');
 Route::post('package-status', [DashboardController::class, 'updatepackagestatus'])->name('update-package-status');
+
+//Route for Team member controller
+Route::resource('admin-member', MemberController::class);
