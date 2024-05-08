@@ -396,7 +396,7 @@ class DashboardController extends Controller
             $extension = $file->getClientOriginalExtension();
 
             $fileNamestoStore = $filename . '_' . time() . '.' . $extension;
-            $file->move('storage/uploads/package_images', $fileNamestoStore);
+            $file->move('storage/uploads/member_images', $fileNamestoStore);
         } else {
             $fileNamestoStore = 'noImage.jpg';
         }
