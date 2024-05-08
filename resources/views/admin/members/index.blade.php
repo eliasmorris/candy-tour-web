@@ -52,9 +52,9 @@
                                                     <th>Full Name</th>
                                                     <th>Phone</th>
                                                     <th>Email</th>
+                                                    <th>Designation</th>
                                                     <th>social media1</th>
                                                     <th>social media2</th>
-                                                    <th>Designation</th>
                                                     <th>Description</th>
                                                     <th>Image</th>
                                                     <th>Status</th>
@@ -121,9 +121,9 @@
                                                     <th>Full Name</th>
                                                     <th>Phone</th>
                                                     <th>Email</th>
+                                                    <th>Designation</th>
                                                     <th>social media1</th>
                                                     <th>social media2</th>
-                                                    <th>Designation</th>
                                                     <th>Description</th>
                                                     <th>Image</th>
                                                     <th>Status</th>
