@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Mail\SendMail;
 use App\Models\BookingInfo;
 use App\Models\LogoInfo;
+use App\Models\MemberInfo;
 use App\Models\PackageInfo;
 use App\Models\ServiceModel;
 use App\Models\SlideImage;
@@ -18,7 +19,8 @@ class PagesController extends Controller
         $slideImages = SlideImage::where('status', 1)->get();
         $packages = PackageInfo::where('status', 1)->get();
         $serviceinfos = ServiceModel::where('status', 1)->get();
-        return view('index', compact(['logoInfos','slideImages', 'packages','serviceinfos']));
+        $memberInfos = MemberInfo::where('status', 1)->get();
+        return view('index', compact(['logoInfos','slideImages', 'packages','serviceinfos','memberInfos']));
 
     }
 

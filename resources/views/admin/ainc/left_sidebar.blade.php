@@ -36,7 +36,7 @@
               <li><a href="{{ url('admin-services') }}"><i class="fa fa-cubes"></i> Services <span class="fa fa-chevron-down"></span></a></li>
               
               <li><a href="{{ url('admin-package') }}"><i class="fa fa-archive"></i> Package<span class="fa fa-chevron-down"></span></a></li>
-              <li><a href="{{ url('admin-member') }}"><i class="fa fa-users"></i> Team Member<span class="fa fa-chevron-down"></span></a></li>
+              <li><a href="{{ url('admin-members') }}"><i class="fa fa-users"></i> Team Member<span class="fa fa-chevron-down"></span></a></li>
                 <ul class="nav child_menu">
                   <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
                   <li><a href="fixed_footer.html">Fixed Footer</a></li>

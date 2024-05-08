@@ -75,4 +75,6 @@ Route::post('admin-package-info',[DashboardController::class, 'updatepackageinfo
 Route::post('package-status', [DashboardController::class, 'updatepackagestatus'])->name('update-package-status');
 
 //Route for Team member controller
-Route::resource('admin-member', MemberController::class);
+Route::resource('admin-members', MemberController::class);
+Route::post('admim-member-info', [DashboardController::class, 'updatememberinfo'])->name('update-member-info');
+Route::post('member-status', [DashboardController::class, 'updatememberstatus'])->name('update-member-status');

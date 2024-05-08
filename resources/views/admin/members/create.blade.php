@@ -1,4 +1,4 @@
-<div class="modal fade service-page-modal-lg" id="usermodal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade member-page-modal-lg" id="usermodal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
@@ -9,17 +9,17 @@
             </div>
             <div class="modal-body">
                 <div class="card-body">
-                    <form method="POST" id="addservicesForm" enctype="multipart/form-data">
+                    <form method="POST" id="addmemberForm" enctype="multipart/form-data">
                         @csrf
                         <!-- {{ method_field('PUT') }} -->
                         <div class="row mb-3">
-                            <label for="service_name" class="col-md-4 col-form-label text-md-end">{{ __('Service Name') }}</label>
+                            <label for="fullname" class="col-md-4 col-form-label text-md-end">{{ __('Full Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="service_name" type="text" class="form-control @error('service_name') is-invalid @enderror"
-                                    name="service_name" value="" required autocomplete="service_name" autofocus>
+                                <input id="fullname" type="text" class="form-control @error('fullname') is-invalid @enderror"
+                                    name="fullname" value="" required autocomplete="fullname" autofocus>
 
-                                @error('service_name')
+                                @error('fullname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -28,11 +28,13 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="service_description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
+                            <label for="phonenumber" class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="service_description" name="service_description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                @error('service_description')
+                                <input id="phonenumber" type="number" class="form-control @error('phonenumber') is-invalid @enderror"
+                                    name="phonenumber" value="" required autocomplete="phonenumber" autofocus>
+
+                                @error('phonenumber')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -41,13 +43,86 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="service_image" class="col-md-4 col-form-label text-md-end">{{ __('Service Image') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="service_image" type="file" class="form-control @error('service_image') is-invalid @enderror"
-                                    name="service_image" value="" maxlength="12" minlength="1" autocomplete="service_image" autofocus multiple >
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="" required autocomplete="email" autofocus>
 
-                                @error('service_image')
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="designation" class="col-md-4 col-form-label text-md-end">{{ __('Designation') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="designation" type="text" class="form-control @error('designation') is-invalid @enderror"
+                                    name="designation" value="" required autocomplete="designation" autofocus>
+
+                                @error('designation')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="social_media" class="col-md-4 col-form-label text-md-end">{{ __('Facebook Link') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="socialmedia" type="url" class="form-control @error('socialmedia') is-invalid @enderror"
+                                    name="socialmedia" value="" required autocomplete="socialmedia" autofocus>
+
+                                @error('socialmedia')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="socialmedia1" class="col-md-4 col-form-label text-md-end">{{ __('Other Link') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="socialmedia1" type="url" class="form-control @error('socialmedia1') is-invalid @enderror"
+                                    name="socialmedia1" value="" required autocomplete="socialmedia1" autofocus>
+
+                                @error('socialmedia1')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="description" name="description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                @error('description')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="member_image" class="col-md-4 col-form-label text-md-end">{{ __('Member Image') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="member_image" type="file" class="form-control @error('member_image') is-invalid @enderror"
+                                    name="member_image" value="" maxlength="12" minlength="1" autocomplete="member_image" autofocus multiple >
+
+                                @error('member_image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -57,13 +132,13 @@
                         <div class="row mb-3">
                             <label for="service_status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
                             <div class="col-md-6">
-                                <select class="form-control" name="service_status" id="service_status">
+                                <select class="form-control" name="member_status" id="member_status">
                                     <option value="" hidden>{{ __('Select Status')}}</option>
                                     <option value="1">{{ __('Active')}}</option>
                                     <option value="0">{{ __('In Active')}}</option>
                                     
                                 </select>
-                                @error('service_status')
+                                @error('member_status')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

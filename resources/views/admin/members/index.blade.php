@@ -23,7 +23,7 @@
                             <h2>Team Member Info</h2>
                             <ul class="nav navbar-right panel_toolbox">
 
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".service-page-modal-lg">
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".member-page-modal-lg">
                                     {{ __('Team Member')}} <i class="fa fa-plus"></i>
                                 </button>
 
@@ -158,7 +158,7 @@
         });
     });
 
-    // Ajax for update slide images status only
+    // Ajax for update member status only
     $(document).ready(function() {
         $.ajaxSetup({
             headers: {
@@ -167,14 +167,14 @@
         });
         $('.switch').change(function() {
             let status = $(this).prop('checked') === true ? 1 : 0;
-            let service_Id = $(this).data('id');
+            let member_Id = $(this).data('id');
             $.ajax({
                 type: "POST",
                 dataType: "json",
-                url: "{{ route('update-service-status') }}",
+                url: "{{ route('update-member-status') }}",
                 data: {
                     'status': status,
-                    'service_id': service_Id
+                    'member_id': member_Id
                 },
                 success: function(data) {
                     toastr.options.closeButton = true;
@@ -191,21 +191,21 @@
 
     });
 
-    // Ajax for add services info data to the db
+    // Ajax for add team member info data to the db
     $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        $('#addservicesForm').on('submit', function(e) {
+        $('#addmemberForm').on('submit', function(e) {
             e.preventDefault();
 
             if (confirm('Are you sure want to save it??')) {
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: "{{ route('admin-services.store')}}", //For using Resource Controller
+                    url: "{{ route('admin-members.store')}}", //For using Resource Controller
                     data: new FormData(this),
                     cache: false,
                     processData: false,
@@ -227,52 +227,57 @@
         });
     });
 
-    // Ajax for featching about page data from the db to the about page form
+    // Ajax for featching member data from the db to the about page form
     $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        $('.service_Edit').click(function(e) {
+        $('.member_Edit').click(function(e) {
             e.preventDefault();
-            let serviceId = $(this).data('id');
+            let memberId = $(this).data('id');
 
             $.ajax({
                 type: "get",
                 dataType: "json",
-                url: "{{ route('admin-services.index')}}" + "/" + serviceId + "/edit", //For using Resource Controller url('userEdit_data')}}"+"/"+uId+"/edit"
+                url: "{{ route('admin-members.index')}}" + "/" + memberId + "/edit", //For using Resource Controller url('userEdit_data')}}"+"/"+uId+"/edit"
                 data: {
-                    'serviceid': serviceId
+                    'memberid': memberId
                 },
                 success: function(data) {
                     //console.log(data.user1.name);
-                    $('#serviceid').val(data.service_infos.id);
-                    $('#service_namee').val(data.service_infos.service_name);
-                    $('#service_descriptionn').val(data.service_infos.service_description);
-                    $('#service_statuss').val(data.service_infos.status);
-                    $('#service_imagee').val(data.service_infos.service_image);
+                    $('#member_id').val(data.memberinfo.id);
+                    $('#fullnamee').val(data.memberinfo.fullname);
+                    $('#phonenumberr').val(data.memberinfo.phone);
+                    $('#emaill').val(data.memberinfo.email);
+                    $('#designationn').val(data.memberinfo.designation);
+                    $('#socialmediaa').val(data.memberinfo.social_media);
+                    $('#socialmedia11').val(data.memberinfo.social_media1);
+                    $('#descriptionn').val(data.memberinfo.description);
+                    $('#member_statuss').val(data.memberinfo.status);
+                    $('#member_imagee').val(data.memberinfo.member_image);
 
                 }
             });
         });
     });
 
-    // Ajax for Update service page info to the db
+    // Ajax for Update member info to the db
     $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        $('#updateservicesForm').on('submit', function(e) {
+        $('#updatememberForm').on('submit', function(e) {
             e.preventDefault();
 
             if (confirm('Are you sure want to update??')) {
                 $.ajax({
                     type: "POST",
                     dataType: "json",
-                    url: "{{ route('update-service-info')}}",
+                    url: "{{ route('update-member-info')}}",
                     data: new FormData(this),
                     cache: false,
                     processData: false,
@@ -283,7 +288,7 @@
                         toastr.options.closeMethod = 'fadeOut';
                         toastr.options.closeDuration = 100;
                         toastr.success(response.message);
-                        $('#servicemodal').modal('hide');
+                        $('#membermodal').modal('hide');
                         //refresh the page
                         setTimeout(() => {
                             document.location.reload();

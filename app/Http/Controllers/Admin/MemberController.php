@@ -30,7 +30,58 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'fullname' => 'required',
+            'phonenumber' => 'required',
+            'email' => 'required',
+            'designation' => 'required',
+            'socialmedia' => 'required',
+            'description' => 'required',
+            'member_image' => 'image|nullable|max:1999',
+            'member_status' => 'required',
+        ]);
+        if (request()->hasFile('member_image')) {
+            
+            $request =request(); 
+            $file = $request->file('member_image');
+            //Get filename with extension
+            $filenameWithExt = $request->file('member_image')->getClientOriginalName();
+            //Get file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //File Extension
+            $extension = $file->getClientOriginalExtension();
+            
+            $fileNamestoStore = $filename. '_'. time() . '.' . $extension;
+            $file->move('storage/uploads/member_images', $fileNamestoStore);
+
+        }else{
+            $fileNamestoStore = 'noImage.jpg';
+        }
+
+            $memberInfos = new MemberInfo;
+            $memberInfos->fullname = $request->input('fullname');
+            $memberInfos->phone = $request->input('phonenumber');
+            $memberInfos->email = $request->input('email');
+            $memberInfos->designation = $request->input('designation');
+            $memberInfos->social_media = $request->input('socialmedia');
+            $memberInfos->social_media1 = $request->input('socialmedia1');
+            $memberInfos->description = $request->input('description');
+            $memberInfos->status = $request->input('member_status');
+            $memberInfos->member_image = $fileNamestoStore;
+            
+            $memberInfos->save();
+
+        if ($memberInfos) {
+            return response()->json([
+                'message' => 'successifully team member info saved',
+                'code' => 200
+            ]);
+        }else{
+            return response()->json([
+                'message' => 'Interna Server Error',
+                'code' => 500
+            ]);
+        }
     }
 
     /**
@@ -46,7 +97,10 @@ class MemberController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $memberInfos = MemberInfo::findOrFail($id);
+        return response()->json([
+        'memberinfo'=> $memberInfos
+     ]);
     }
 
     /**
@@ -62,6 +116,16 @@ class MemberController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $memberInfos = MemberInfo::find($id);
+        $memberInfos->delete();
+
+        if ($memberInfos) {
+            return response(redirect()->back()->with('message', 'successifully deleted member info'));
+        }else{
+            return response()->json([
+                'message' => 'Interna Server Error',
+                'code' => 500
+            ]);
+        }
     }
 }
