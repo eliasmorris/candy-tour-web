@@ -202,15 +202,15 @@
 
                             <div class="team-social">
                                 <ul>
-                                    <li><a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="http://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="{{$memberInfo->social_media}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="{{$memberInfo->social_media1}}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
 
                         </div>
                         <div class="team-text">
                             <a href="team-member/brent-grundy.html">{{$memberInfo->fullname}}</a>
-                            <p>Founder</p>
+                            <p>{{$memberInfo->designation}}</p>
                         </div>
                     </div>
                     @endforeach
