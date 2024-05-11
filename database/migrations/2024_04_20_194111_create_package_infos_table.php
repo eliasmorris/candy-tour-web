@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('package_infos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('destination_id');
+            $table->id();
             $table->string('packagename');
             $table->string('packagetrip');
             $table->double('packagecost');
@@ -21,7 +20,7 @@ return new class extends Migration
             $table->string('packageimage');
             $table->string('status');
             $table->timestamps();
-            $table->foreign('destination_id')->references('id')->on('destination_infos');
+            // $table->foreign('destination_id')->references('id')->on('destination_infos');
         });
     }
 

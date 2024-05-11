@@ -209,7 +209,7 @@
 
                         </div>
                         <div class="team-text">
-                            <a href="team-member/brent-grundy.html">{{$memberInfo->fullname}}</a>
+                            <a href="{{Route('view-team-member', $memberInfo->id)}}">{{$memberInfo->fullname}}</a>
                             <p>{{$memberInfo->designation}}</p>
                         </div>
                     </div>
@@ -253,7 +253,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-item">
+                    <!-- <div class="testimonial-item">
                         <div class="testimonial-photo" style="background-image: url(storage/uploads/testimonial-2.jpeg)"></div>
                         <div class="testimonial-text">
                             <h2>Dadiv Smith</h2>
@@ -276,7 +276,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

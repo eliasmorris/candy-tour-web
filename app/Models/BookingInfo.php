@@ -16,7 +16,8 @@ class BookingInfo extends Model
         'startdate',
         'enddate',
         'vistornumber',
-        'packagecost'
+        'packagecost',
+        'totalcost'
     ];
     
 }

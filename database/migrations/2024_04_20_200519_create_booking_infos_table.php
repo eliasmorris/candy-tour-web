@@ -21,6 +21,7 @@ return new class extends Migration
             $table->dateTime('enddate');
             $table->integer('vistornumber');
             $table->double('packagecost');
+            $table->double('totalcost');
             $table->timestamps();
         });
     }

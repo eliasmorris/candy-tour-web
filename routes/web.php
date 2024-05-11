@@ -33,6 +33,7 @@ Route::get('about-us', [PagesController::class, 'aboutPage'])->name('pages.about
 Route::get('our-services',[PagesController::class, 'servicePage'])->name('pages.services');
 Route::get('our-packages', [PagesController::class, 'packagePage'])->name('pages.package');
 Route::get('team-members', [PagesController::class, 'teammemberPage'])->name('pages.teammember');
+Route::get('team-member/{id}', [PagesController::class, 'viewmember'])->name('view-team-member');
 Route::get('our-testimonial', [PagesController::class, 'testimonialPage'])->name('pages.testimonial');
 Route::get('faq', [PagesController::class, 'faqPage'])->name('pages.faq');
 Route::get('contact-us', [PagesController::class, 'contactPage'])->name('pages.contact');

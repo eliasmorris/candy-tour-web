@@ -31,6 +31,13 @@ class PagesController extends Controller
         $serviceinfos = ServiceModel::where('status', 1)->get();
         return view('readmore', compact(['logoInfos','slideImages', 'package','serviceinfos']));
     }
+
+    public function viewmember($id){
+        
+        $logoInfos = LogoInfo::where('status', 1)->get();
+        $memberInfos = MemberInfo::find($id);
+        return view('pages.members.index', compact(['memberInfos', 'logoInfos']));
+    }
     
     public function aboutPage(){
         $logoInfos = LogoInfo::where('status', 1)->get();
@@ -91,6 +98,8 @@ class PagesController extends Controller
             'enddate' => 'required',
             'packagecost' => 'required',
             'vistornumber' => 'required',
+            'totalcost' => 'required'
+            
         ]);
     
         
@@ -109,6 +118,7 @@ class PagesController extends Controller
                 'enddate' => $request->enddate,
                 'packagecost' => $request->packagecost,
                 'vistornumber' => $request->vistornumber,
+                'totalcost' => $request->totalcost,
                 'mailto' => 'seventcentl@gmail.com',
             ];
     

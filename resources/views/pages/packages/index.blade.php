@@ -25,7 +25,7 @@
         @if(session('status'))
                 <div class="alert alert-success">{{session('status')}}</div>
               @endif
-        <form action="{{Route('booking-info')}}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('booking-info')}}" method="post" enctype="multipart/form-data">
         @csrf
             <div class="row">
                 <div class="col-md-8 wow fadeIn" data-wow-delay="0.2s">
@@ -152,8 +152,8 @@
                                             </select>
                                             <div class="sep mb_15"></div>
                                             <label>Total Price</label>
-                                            <div class="mb_15 fz_32">
-                                                <i class="fas fa-dollar-sign"></i> <span id="totalPrice">{{$packagecost->packagecost}}</span>
+                                            <div class="mb_5" style="font-size: 30px;">
+                                            <i class="fas fa-dollar-sign"></i> <input type="" id="totalcost" name="totalcost" required />
                                             </div>
                                         </div>
                                     </div>
@@ -357,10 +357,11 @@
                 var selectPrice = $('#packagecost').val();
                 if (dayDiff == 0) {
                     var totalPrice = selectVal * selectPrice;
-                    $('#totalPrice').text(totalPrice);
+                    $('#totalcost').val(totalPrice);
+                    
                 } else {
                     var totalPrice = selectVal * selectPrice * dayDiff;
-                    $('#totalPrice').text(totalPrice);
+                    $('#totalcost').val(totalPrice);
                 }
 
 
@@ -368,6 +369,42 @@
         });
 
     })(jQuery);
+
+    // // Ajax for add services info data to the db
+    // $(document).ready(function() {
+    //     $.ajaxSetup({
+    //         headers: {
+    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //         }
+    //     });
+    //     $('#addbookingInfo').on('submit', function(e) {
+    //         e.preventDefault();
+
+    //         if (confirm('Are you sure want to booking with us??')) {
+    //             $.ajax({
+    //                 type: "post",
+    //                 dataType: "json",
+    //                 url: "", //For using Resource Controller
+    //                 data: new FormData(this),
+    //                 cache: false,
+    //                 processData: false,
+    //                 contentType: false,
+    //                 success: function(response) {
+
+    //                     toastr.options.closeButton = true;
+    //                     toastr.options.closeMethod = 'fadeOut';
+    //                     toastr.options.closeDuration = 100;
+    //                     toastr.success(response.message);
+    //                     //refresh the page
+    //                     setTimeout(() => {
+    //                         document.location.reload();
+    //                     }, 2000); // 2000 milliseconds = 2 seconds
+
+    //                 }
+    //             });
+    //         }
+    //     });
+    // });
 </script>
 
 @endsection
