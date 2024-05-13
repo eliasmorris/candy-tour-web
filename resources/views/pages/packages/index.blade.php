@@ -27,12 +27,14 @@
               @endif
         <form action="{{ route('booking-info')}}" method="post" enctype="multipart/form-data">
         @csrf
+
+            <input type="text" name="packagename" id="packagename" value="{{$packagecost->packagename}}" />
             <div class="row">
                 <div class="col-md-8 wow fadeIn" data-wow-delay="0.2s">
 
                     <div class="fea-descrip">
 
-                        <div class="headstyle-two mt_30">
+                        <div class="headstyle-two mt_30">   
                             <h4>Booking Info</h4>
                         </div>
                         <div class="descrip-pre table-responsive mb_25">

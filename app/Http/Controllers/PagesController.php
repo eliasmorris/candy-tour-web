@@ -96,6 +96,7 @@ class PagesController extends Controller
             'phoneNumber' => 'required|digits:10|numeric',
             'startdate' => 'required',
             'enddate' => 'required',
+            'packagename' => 'required',
             'packagecost' => 'required',
             'vistornumber' => 'required',
             'totalcost' => 'required'
@@ -116,6 +117,7 @@ class PagesController extends Controller
                 'phoneNumber' => $request->phoneNumber,
                 'startdate' => $request->startdate,
                 'enddate' => $request->enddate,
+                'packagename' => $request->packagename,
                 'packagecost' => $request->packagecost,
                 'vistornumber' => $request->vistornumber,
                 'totalcost' => $request->totalcost,
@@ -125,7 +127,7 @@ class PagesController extends Controller
             Mail::send('sendmail', $mail_data, function($msg) use($mail_data){
                 $msg->to($mail_data['mailto']);
                 $msg->from($mail_data['mailfrom']);
-                $msg->subject($mail_data['packagecost']);
+                $msg->subject($mail_data['packagename']);
             } );
     
             return redirect()->back()->with(['status' => 'Thanks for booking with us!']);

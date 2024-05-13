@@ -10,7 +10,8 @@
     <h1>Name: {{$firstName}} {{$firstName}}</h1>
     <h1>Phone No:{{$phoneNumber}}</h1>
     <h1>Fisrst Date: {{$startdate}} Last Date: {{$enddate}}</h1>
+    <h1>Package Name: {{$packagename}}</h1>
     <h1>Number of Vistors: {{$vistornumber}}</h1>
-    <h1>Tour Cost: {{$packagecost}}</h1>
+    <h1>Tour total Cost: {{$totalcost}}</h1>
 </body>
 </html>

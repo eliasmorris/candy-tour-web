@@ -15,6 +15,7 @@ class BookingInfo extends Model
         'phoneNumber',
         'startdate',
         'enddate',
+        'packagename',
         'vistornumber',
         'packagecost',
         'totalcost'
