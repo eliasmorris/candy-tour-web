@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phoneNumber');
             $table->dateTime('startdate');
             $table->dateTime('enddate');
-            $table->string('packagename');
+            $table->string('packagename'); //name of tour
             $table->integer('vistornumber');
             $table->double('packagecost');
             $table->double('totalcost');
