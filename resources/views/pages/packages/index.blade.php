@@ -86,20 +86,20 @@
                                 </tr>
 
                                 <tr>
-                                    <th>Tour Start Date</th>
-                                    <th>Tour End Date</th>
+                                    <th>Pick up Date Time</th>
+                                    <th>Drop off Date Time</th>
                                 </tr>
                                 <tr>
                                     <td><span class="fz_20"><b>
                                                 <div class="input-group date" id="datepicker">
-                                                    <input type="date" class="form-control" id="startdate" name="startdate" />
+                                                    <input type="datetime-local" class="form-control" id="startdate" name="startdate" />
 
                                                 </div>
                                             </b></span>
                                     </td>
                                     <td><span class="fz_20"><b>
                                                 <div class="input-group date" id="datepicker">
-                                                    <input type="date" class="form-control" id="enddate" name="enddate" />
+                                                    <input type="datetime-local" class="form-control" id="enddate" name="enddate" />
 
                                                 </div>
                                             </b></span>
