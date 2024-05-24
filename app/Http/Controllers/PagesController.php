@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Mail\SendMail;
+use App\Models\AboutInfo;
 use App\Models\BookingInfo;
 use App\Models\LogoInfo;
 use App\Models\MemberInfo;
@@ -41,7 +42,8 @@ class PagesController extends Controller
     
     public function aboutPage(){
         $logoInfos = LogoInfo::where('status', 1)->get();
-        return view('pages.about', compact('logoInfos'));
+        $aboutusInfos = AboutInfo::where('status', 1)->get();
+        return view('pages.about', compact(['logoInfos', 'aboutusInfos']));
     }
 
     public function servicePage(){
