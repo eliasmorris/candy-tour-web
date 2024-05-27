@@ -84,7 +84,7 @@ class PagesController extends Controller
 
     public function packageView($id){
         $logoInfos = LogoInfo::where('status', 1)->get();
-        $packageviewpictures = PackageInfo::where('id', $id)->orderBy('id', 'desc')->paginate(3);
+        $packageviewpictures = PackageInfo::orderBy('id', 'desc')->paginate(3);
         $packagescost = PackageInfo::where('id', $id)->get();
         return view('pages.packages.index', compact(['logoInfos','packagescost', 'packageviewpictures']));
     }
