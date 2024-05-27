@@ -247,6 +247,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {!! $packageviewpicture->render() !!}
                                 @endforeach
                                 @endif
                             </div>
