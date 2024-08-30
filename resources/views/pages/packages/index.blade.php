@@ -251,8 +251,8 @@
                                 @endforeach
                                 @endif
                             </div>
-
                         </div>
+                        
                         <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
 
                             <div class="row">
@@ -335,6 +335,7 @@
 
                         </div>
                     </div>
+                    
 
                 </div><!-- //packmoreinfo-tab -->
 

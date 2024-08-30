@@ -45,7 +45,6 @@
                                             <thead>
                                                 <tr>
                                                     <th>S/No</th>
-                                                    <th>Destination Name</th>
                                                     <th>Package Name</th>
                                                     <th>Trip</th>
                                                     <th>Cost</th>
@@ -60,7 +59,6 @@
                                                 @foreach($packageInfos as $packageInfo)
                                                 <tr>
                                                     <td>{{$loop->index + 1}}</td>
-                                                    <td>{{$packageInfo->destination_info_id}}</td>
                                                     <td>{{$packageInfo->packagename}}</td>
                                                     <td>{{$packageInfo->packagetrip}}</td>
                                                     <td>{{$packageInfo->packagecost}}</td>
@@ -120,7 +118,6 @@
                                             <thead>
                                                 <tr>
                                                     <th>S/No</th>
-                                                    <th>Destination Name</th>
                                                     <th>Package Name</th>
                                                     <th>Trip</th>
                                                     <th>Cost</th>

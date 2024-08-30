@@ -6,7 +6,7 @@
         <div class="bg"></div>
         <div class="bannder-table">
             <div class="banner-text">
-                <h1>About Us</h1>
+                <h1>About candy tour</h1>
             </div>
         </div>
     </div>
