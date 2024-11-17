@@ -12,7 +12,7 @@
                     <div class="col-md-7 col-sm-12 ">
                         <div class="slider-table">
                             <div class="slider-text">
-                                <h1>helloo</h1>
+                                
                                 <div class="text-animated">
                                     <h1>{{$slideImage->head_caption}}</h1>
                                 </div>
